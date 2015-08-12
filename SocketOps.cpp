@@ -239,7 +239,7 @@ int write(int fd, char *buf, int len)
         }
     }
 
-    return send_num;//should not be 0
+    return send_num;
 }
 
 int read(int fd, char *buf, int len)
@@ -268,7 +268,7 @@ int read(int fd, char *buf, int len)
         }
     }
 
-    return recv_num; //should not be 0
+    return recv_num;
 }
 
 
