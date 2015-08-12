@@ -326,7 +326,8 @@ int Reactor::Impl::minTimerDuration()const//milliseconds
         return -1;
 
     EventPtr ev = m_timer_events.front();
-    return std::chrono::duration_cast<std::chrono::milliseconds>(ev->m_active_time - std::chrono::steady_clock::now()).count();
+    auto ret = std::chrono::duration_cast<std::chrono::milliseconds>(ev->m_active_time - std::chrono::steady_clock::now()).count();
+    return ret > 0 ? ret : 0;
 }
 
 
